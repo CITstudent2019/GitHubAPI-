@@ -6,6 +6,8 @@ import requests
 import time
 
 while(True):
+	# make sure input is lowercase (ex. python)
+	# TODO handle errors
 	lang = raw_input("Language to Query: ")
 
 	url = 'https://api.github.com/search/repositories?q=language:' + lang + '&sort=stars'
