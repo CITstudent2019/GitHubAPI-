@@ -3,10 +3,9 @@
 # 02/05/2019
 
 import requests 
+import time
 
-keepGoing = 'y'
-
-while (keepGoing == "y"):
+while(True):
 	lang = raw_input("Language to Query: ")
 
 	url = 'https://api.github.com/search/repositories?q=language:' + lang + '&sort=stars'
@@ -21,12 +20,13 @@ while (keepGoing == "y"):
 
 	repo_dicts = response_dict['items']
 	print("Top Repositories: ")
-	
+
 	count = 1
 	for repo_dict in repo_dicts:
 		print(str(count) + ". " + repo_dict['name'])
 		count += 1
-		
+		time.sleep(.100)
+
 	print("------------------------------------------------------------------")
 
-	
+
